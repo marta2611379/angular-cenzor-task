@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="font-weight-bold mb-3 font-size">
+        <span>Bad words: </span>
+        <span class="text-danger" *ngFor="let word of words; let i=index">{{word}} </span>
+    </div>
+    <div class="btn-toolbar mb-3 col-xs-9">
+        <div class="input-group">
+            <input [(ngModel)]="badWord" name="badWord" id="badWord" placeholder="word here ..." type="text" class="form-control" [ngClass]="{'is-invalid': emptyStatusWord}">
+        </div>
+        <div class="btn-group mr-2">
+            <button type="button" class="btn btn-warning ml-2" (click)="addWord()">Add</button>
+            <button type="button" class="btn btn-danger ml-2" (click)="resetCerzor()">Reset</button>
+        </div>
+    </div>
+    <textarea [(ngModel)]="cenzorText" name="cenzorText" id="cenzorText" placeholder="text here ..." class="form-control" rows="3" [ngClass]="{'is-invalid': emptyStatusArea}"></textarea>
+    <br>
+    <input type="button" class="btn btn-success btn-block" (click)="cerzor()" value="Cenzor" name="zenzor">
+</div>
